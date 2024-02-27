@@ -1,0 +1,41 @@
+{% extends 'main/base.html'%}
+
+{% block title %} Экскурсии {% endblock %}
+
+{% block content %}
+<div class="d-flex flex-wrap align-items-center ">
+    <h1 class="m-2 d-flex" >Экскурсии</h1>
+{% if user.is_authenticated %}
+
+    <a href="{% url 'excursion-add' %}" style="margin-left: auto; padding-right: 5px" class="text-decoration-none">
+        <button class="btn btn-primary d-flex" > Добавить </button>
+    </a>
+</div>
+    {% endif %}
+    <div class="row m-1">
+      {% for el in exc %}
+        <div class="col-md-4 col-12 p-1">
+            <div class='card align-middle'>
+                <div class='row'>
+                    <div class='col-md-12 col-2'>
+                        <div class="card-header text-center">
+                            <h4 class="my-0 fw-normal">{{ el.title }}</h4>
+                        </div>
+                    </div>
+                    <div class='col-md-12 col-8'>
+                        <div class="card-body">
+                            <p> {{ el.desc }} </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12 col-2">
+                        <div class="card-footer text-center">
+                            <p class="w-100"> {{ el.time }} </p>
+                            <a href="{% url 'excursions-detail' el.id %}" class="btn btn-warning">Подробнее...</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+      {% endblock %}
+    </div>

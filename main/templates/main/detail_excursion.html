@@ -1,0 +1,16 @@
+{% extends 'main/base.html'%}
+
+{% load static %}
+
+{% block title %} {{ excursion.title }} {% endblock %}
+
+{% block style %} <link rel="stylesheet" href="{% static 'main/css/text.css' %}"> {% endblock %}
+
+{% block content %}
+<p class="im">{{ excursion.title }}</p>
+<p class="at" style="font-weight: normal">{{ excursion.desc }}</p>
+{% if excursion.pict %}
+    <p class="im" style="font-weight: normal"> <img src={{ excursion.pict.url }} style="width: px;  height: px"> </p>
+{% endif %}
+
+{% endblock %}

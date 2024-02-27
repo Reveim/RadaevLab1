@@ -1,0 +1,33 @@
+{% extends 'main/base.html'%}
+{% load static %}
+
+{% block title %} Вход {% endblock %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'main/css/signin.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="text-center pt-5">
+        <form class="form-signin" action="{% url 'login' %}" method="post">
+          {% csrf_token %}
+            <a href="{% url 'home' %}" >
+                <img class="mb-4" src="{% static 'main/img/unknown.png' %}" alt="" width="72" height="72">
+            </a>
+            <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
+            <label for="inputUsername" class="sr-only">Имя пользователя</label>
+            <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username" required autofocus>
+            <label for="inputPassword" class="sr-only">Пароль</label>
+            <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+          <!--<div class="checkbox mb-3">
+              <label>
+                <input type="checkbox" value="remember-me"> Remember me
+              </label>
+          </div>-->
+          <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+            <a href="{% url 'password_reset' %}" style="color: black"> Забыли пароль? </a>
+        </form>
+        {{ form.errors }}
+    </div>
+{% endblock %}

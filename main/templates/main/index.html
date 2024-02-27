@@ -1,0 +1,51 @@
+{% extends 'main/base.html'%}
+
+{% load static %}
+
+{% block title %} Главная {% endblock %}
+
+{% block style %} <link rel="stylesheet" href="{% static 'main/css/text.css' %}"> {% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+<div style="padding: 3px; display: flex;">
+        <div style="background-color: #d0d5db; margin: auto;" align="center">
+        <h1> Использованный курс видео-уроков </h1>
+        <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/oBU83uojltE?si=CPP7otuOEstxZljW"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </div>
+{% endif %}
+<div style="background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8)), url(static/main/img/background_1.png);  height:100%;">
+<p class="at" style="color: white; text-shadow: 1px 1px 2px #000, -1px 1px 2px #000, -1px -1px 0 #000, 1px -1px 0 #000;">
+    Живая творческая лаборатория, легендарный городок писателей появился рядом с Москвой в 30-х годах прошлого столетия.
+    Здесь жили и работали самые значительные литераторы ХХ века, в том числе Борис Пастернак, Корней Чуковский,
+    Исаак Бабель, Константин Паустовский, Леонид Леонов, Булат Окуджава,
+    Евгений Евтушенко, Белла Ахмадулина и многие многие другие.
+    Воздух Переделкино по-прежнему вдохновляет: сюда приезжают гулять по тропинкам Дома Творчества Писателей,
+    посетить мемориальные дома-музеи и переделкинский некрополь.</p>
+
+    <p class="im" style="font-weight: normal ; color: white; text-shadow: 1px 1px 2px #000, -1px 1px 2px #000, -1px -1px 0 #000, 1px -1px 0 #000;">
+        Городок писателей Переделкино — место, не имеющее аналогов в мире.
+        Его появление связано с идеей создания особых условий для "инженеров человеческих душ".
+        Однако большие привилегии сопровождались определенными требованиями и постоянным присмотром.
+        Жизнь Переделкина полна драматических и трагичных моментов, тем не менее именно здесь создавались важнейшие произведения ХХ века.
+    </p>
+    <center>
+    <iframe width="800" height="500"
+            src="https://www.youtube.com/embed/zRQLs1hCBXM?autoplay=1&loop=1&enablejsapi=1&playerapiid=featuredytplayer&controls=0&modestbranding=1&rel=0&showinfo=0&color=white&iv_load_policy=3&theme=light&wmode=transparent&origin=https://pro-peredelkino.org&playlist=zRQLs1hCBXM&mute=1" title="YouTube video player"
+            frameborder="0"
+            scrolling="no"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+    ></iframe>
+    </center>
+</div>
+
+
+{% endblock %}

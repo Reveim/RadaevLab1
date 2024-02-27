@@ -1,0 +1,47 @@
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+.wrapper{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.header, .main, .footer{
+
+}
+
+.main{
+     min-height: 100vh;
+     background: center center/auto repeat fixed;
+     background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(../img/background.png)
+}
+
+.footer{
+    background: center center/contain repeat content-box local;
+    background-image:  linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url(../img/cake.png)
+}
+.footer .text{
+    color: rgba(255, 0, 0, 1);
+    display: flex;
+    align-items: center;
+}
+.footer .text h5{
+    margin-left: auto;
+    padding: 1px;
+}
+.footer .text h1{
+    padding: 1px;
+    margin-bottom: 0px;
+}
+.map{
+    width: 1000px;
+    height: 600px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid;
+    margin-top: 5px
+}

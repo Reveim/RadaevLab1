@@ -1,0 +1,16 @@
+{% extends 'main/base.html'%}
+
+{% block title %} Добавление {% endblock %}
+
+{% block content %}
+<h1 class="m-2">Добавить экскурсию</h1>
+<form action="" method="post" enctype="multipart/form-data" class="m-2">
+    {% csrf_token %}
+    <div class="form-error">{{ form.non_field_errors }}</div>
+    {% for f in form %}
+    <p><label class="form-label" style="margin-right: 3px" for="{{ f.id_for_label }}">{{ f.label }}:</label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+    <p><button type="submit">Отправить</button> </p>
+</form>
+{% endblock %}
